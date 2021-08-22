@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./main.css">
+    <title>Todo App</title>
+</head>
+<body>
+    <header>
+        <p id="date-el"></p>
+    </header>
+    <main>
+        <section id="groups-el">
+            <p class="titleName">Groups</p>
+        </section>
+        <section id="statistics"></section>
+        <section id="task-el">
+            <p class="titleName">Tasks</p>
+            <ul class="tasksbox" id="tasks"></ul>
+        </section>
+        <section id="completed-el">
+            <p class="titleName">Completed</p>
+            <ul class="tasksbox" id="completed-tasks"></ul>
+        </section>
+    </main>
+    <div id="btnGroup">
+        <button class="btn" id="newTaskBtn">Create new task</button>
+    </div>
+    <div class="d-none" id="addOverlay">
+        <div class="overlayInner-el" id="addTask">
+            <input type="text" id="addTaskField" placeholder="Add a task here"  autofocus autocomplete="off">
+            <button class="btn" id="addTaskBtn">Add</button>
+        </div>
+    </div>
+    
+    <script src="./eva-icons.js"></script>
+    <script src="./main.js"></script>
+    <script>
+        eva.replace()
+    </script>
+</body>
+</html>

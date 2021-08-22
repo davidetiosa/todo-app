@@ -4,38 +4,189 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./main.css">
+    <link rel="stylesheet" href="./styles/main.css">
     <title>Todo App</title>
 </head>
 <body>
-    <header>
-        <p id="date-el"></p>
+    <header id="htop">
+        <nav aria-labelledby="primary-navigation" id="nav">
+            <div class="nav--hamLine"></div>
+            <div class="nav--hamLine"></div>
+            <div class="nav--hamLine"></div>
+        </nav>
+        <div id="htop--grp">
+            <div id="htop--grp-img"></div>
+            <div id="htop--grp-line"></div>
+            <div id="htop--grp-date">
+                <p id="htop--grp-date-el"></p>
+            </div>
+        </div>
     </header>
-    <main>
-        <section id="groups-el">
-            <p class="titleName">Groups</p>
-        </section>
-        <section id="statistics"></section>
-        <section id="task-el">
-            <p class="titleName">Tasks</p>
-            <ul class="tasksbox" id="tasks"></ul>
-        </section>
-        <section id="completed-el">
-            <p class="titleName">Completed</p>
-        </section>
-    </main>
-    <div id="btnGroup">
-        <button class="btn" id="newTaskBtn">Create new task</button>
+    <section class="section" id="groups">
+        <h2 class="section--title">Groups</h2>
+        <div id="groups--container">
+            <!-- max 42 characters -->
+            <div class="group--item">
+                <div class="group--item-details">
+                    <p class="group--item-details_name">JavaScript Roadmap</p>
+                    <p class="group--item-details_date">20/08/21</p>
+                </div>
+                <div class="group--item-progress">
+                    <progress class="pBar" id="grp-1" value="11" max="100">
+                        <strong>Progress: 11% done.</strong>
+                    </progress>
+                    <label for="grp-1">11%</label>
+                </div>
+            </div>
+            <div class="group--item">
+                <div class="group--item-details">
+                    <p class="group--item-details_name">Books to read</p>
+                    <p class="group--item-details_date">20/08/21</p>
+                </div>
+                <div class="group--item-progress">
+                    <progress class="pBar" id="grp-2" value="36" max="100">
+                        <strong>Progress: 36% done.</strong>
+                    </progress>
+                    <label for="grp-2">36%</label>
+                </div>
+            </div>
+            <div class="group--item">
+                <div class="group--item-details">
+                    <p class="group--item-details_name">A really long group name</p>
+                    <p class="group--item-details_date">20/08/21</p>
+                </div>
+                <div class="group--item-progress">
+                    <progress class="pBar" id="grp-3" value="11" max="100">
+                        <strong>Progress: 11% done.</strong>
+                    </progress>
+                    <label for="grp-3">11%</label>
+                </div>
+            </div>
+            <div class="group--item">
+                <div class="group--item-details">
+                    <p class="group--item-details_name">A really really long group name</p>
+                    <p class="group--item-details_date">20/08/21</p>
+                </div>
+                <div class="group--item-progress">
+                    <progress class="pBar" id="grp-4" value="72" max="100">
+                        <strong>Progress: 72% done.</strong>
+                    </progress>
+                    <label for="grp-4">72%</label>
+                </div>
+            </div>
+            <div class="group--item">
+                <div class="group--item-details">
+                    <p class="group--item-details_name">A weird name, because why the heck not.A</p>
+                    <p class="group--item-details_date">20/08/21</p>
+                </div>
+                <div class="group--item-progress">
+                    <progress class="pBar" id="grp-5" value="58" max="100">
+                        <strong>Progress: 58% done.</strong>
+                    </progress>
+                    <label for="grp-5">58%</label>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section" id="uncompleted-tasks">
+        <h2 class="section--title">Tasks</h2>
+        <ul class="section--box" id="uncompleted-tasks--box">
+            <li class="section--box-item">
+                <div class="check-icon-box">
+                    <div class="check-icon-box--inner"></div>
+                </div>
+                <p class="section--box-item_value">Lorem ipsum, dolor sit amet eveniet. Lorem ipsum, dolor sit amet eveniet.</p>
+            </li>
+            <li class="section--box-item">
+                <div class="check-icon-box">
+                    <div class="check-icon-box--inner"></div>
+                </div>
+                <p class="section--box-item_value">Lorem ipsum, dolor sit amet.</p>
+            </li>
+            <li class="section--box-item">
+                <div class="check-icon-box">
+                    <div class="check-icon-box--inner"></div>
+                </div>
+                <p class="section--box-item_value">Lorem ipsum, dolor sit amet.</p>
+            </li>
+            <li class="section--box-item">
+                <div class="check-icon-box">
+                    <div class="check-icon-box--inner"></div>
+                </div>
+                <p class="section--box-item_value">Lorem ipsum, dolor sit amet eveniet.</p>
+            </li>
+        </ul>
+    </section>
+    <section class="section" id="completed-tasks">
+        <h2 class="section--title">Completed</h2>
+        <ul class="section--box" id="completed-tasks--box">
+            <li class="section--box-item completed">
+                <div class="check-icon-box">
+                    <div class="check-icon-box--inner"></div>
+                </div>
+                <p class="section--box-item_value">Lorem ipsum, dolor sit amet.</p>
+            </li>
+            <li class="section--box-item completed">
+                <div class="check-icon-box">
+                    <div class="check-icon-box--inner"></div>
+                </div>
+                <p class="section--box-item_value">Lorem ipsum, dolor sit amet eveniet. Lorem ipsum, dolor sit amet eveniet.</p>
+            </li>
+            <li class="section--box-item completed">
+                <div class="check-icon-box">
+                    <div class="check-icon-box--inner"></div>
+                </div>
+                <p class="section--box-item_value">Lorem ipsum, dolor sit amet.</p>
+            </li>
+            <li class="section--box-item completed">
+                <div class="check-icon-box">
+                    <div class="check-icon-box--inner"></div>
+                </div>
+                <p class="section--box-item_value">Lorem ipsum, dolor sit amet eveniet.</p>
+            </li>
+            <li class="section--box-item completed">
+                <div class="check-icon-box">
+                    <div class="check-icon-box--inner"></div>
+                </div>
+                <p class="section--box-item_value">Lorem ipsum, dolor sit amet eveniet.</p>
+            </li>
+            <li class="section--box-item completed">
+                <div class="check-icon-box">
+                    <div class="check-icon-box--inner"></div>
+                </div>
+                <p class="section--box-item_value">Lorem ipsum, dolor sit amet eveniet.</p>
+            </li>
+        </ul>
+    </section>
+    <div style="height: 1em"></div>
+    <div class="bottom-button-el" id="main-button-group">
+        <button class="btn" id="add-group-btn" type="button">Add group</button>
+        <button class="btn" id="main-add-task-btn" type="button">Add task</button>
     </div>
-    <div class="d-none" id="addOverlay">
-        <div class="overlayInner-el" id="addTask">
-            <input type="text" id="addTaskField" placeholder="Add a task here"  autofocus autocomplete="off">
-            <button class="btn" id="addTaskBtn">Add</button>
+    <div class="overlay" id="main-overlay">
+        <div class="overlay--inputModal" id="main-overlay--addGroupModal">
+            <div class="inputModal--form">
+                <div class="inputModal--form-inputArea">
+                    <textarea onkeyup="gccUpdate(this.value)" required rows="1" maxlength="42" class="inputModal--form-inputArea_field" name="" id="addGroupModal--field" placeholder="Enter group name..." autocomplete="off"></textarea>
+                    <span class=charCount></span>
+                </div>
+                <button class="inputModal--form-button btn" id="addGroupModal--button">Add group</button>
+            </div>
+        </div>
+        <div class="overlay--inputModal" id="main-overlay--addTaskModal">
+            <div class="inputModal--form">
+                <div class="inputModal--form-inputArea">
+                    <textarea required rows="1" class="inputModal--form-inputArea_field" name="" id="defaultAddTaskModal--field" placeholder="Enter task here..." autocomplete="off"></textarea>
+                    <span class=charCount></span>
+                </div>
+                <button class="inputModal--form-button btn" id="defaultAddTaskModal--button">Add task</button>
+            </div>
         </div>
     </div>
     
-    <script src="./eva-icons.js"></script>
-    <script src="./main.js"></script>
+    <script src="./scripts/eva-icons.js"></script>
+    <script src="./scripts/ui.js"></script>
+    <script src="./scripts/main.js"></script>
     <script>
         eva.replace()
     </script>

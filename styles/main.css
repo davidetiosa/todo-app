@@ -1,0 +1,367 @@
+*, *::after, *::before {
+  outline: none;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  list-style: none;
+  font-family: Barlow, sans-serif;
+}
+
+body {
+  background-color: #13101A;
+  color: white;
+  font-size: 16px;
+  height: 100vh;
+  position: relative;
+  scroll-behavior: smooth;
+}
+
+@media screen and (min-width: 401px) {
+  body {
+    display: none;
+  }
+}
+button {
+  cursor: pointer;
+}
+
+textarea {
+  resize: none;
+}
+textarea::-webkit-scrollbar {
+  width: 0px;
+}
+
+.charCount {
+  font-size: 0.8em;
+  letter-spacing: 0.1em;
+}
+
+.d-none {
+  display: none !important;
+}
+
+.btn {
+  color: white;
+  background-color: #3446ee;
+  border: none;
+  border-radius: 0.25rem;
+  font-size: 1em;
+  font-weight: 600;
+  line-height: 1.5rem;
+  letter-spacing: 0.1em;
+  width: 100%;
+}
+
+.pBar {
+  width: 4.25rem;
+  height: 0.25rem;
+  /* turn off default progress bar styling */
+}
+
+progress,
+progress[role] {
+  -webkit-appearance: none;
+  -webkit-appearance--moz-appearance: none;
+  -webkit-appearance--moz-appearance-appearance: none;
+  border: none;
+  background-size: auto;
+}
+
+progress[role]:after {
+  background-image: none;
+}
+
+progress[role] strong {
+  display: none;
+  /* progress bar background */
+}
+
+progress,
+progress[role][aria-valuenow] {
+  background: white !important;
+  border-radius: 0.125rem;
+}
+
+progress[value]::-webkit-progress-bar {
+  background-color: white;
+  border-radius: 0.125rem;
+  box-shadow: 0 0.125rem 0.3125rem rgba(0, 0, 0, 0.25) inset;
+  /* progress bar value */
+}
+
+progress::-webkit-progress-value {
+  background-color: #3446ee;
+}
+
+progress[value]::-moz-progress-bar {
+  background-color: #3446ee;
+}
+
+progress {
+  color: #3446ee;
+}
+
+progress[aria-valuenow]:before {
+  background-color: #3446ee;
+}
+
+#htop {
+  padding: 0.5em 1em;
+  display: flex;
+  gap: 1em;
+  height: 3em;
+}
+#htop--grp {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75em;
+}
+#htop--grp-img {
+  width: 1.5em;
+  height: 1.5em;
+  background-color: #ffffff1e;
+  border-radius: 50%;
+}
+#htop--grp-line {
+  width: 0.05em;
+  height: 1em;
+  background-color: #ffffff1e;
+}
+#htop--grp-date {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#htop--grp-date-el {
+  font-size: 1em;
+  letter-spacing: 0.1em;
+  font-weight: 600;
+}
+
+#nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25em;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav--hamLine {
+  width: 1.25em;
+  height: 0.125em;
+  background-color: #ffffff1e;
+}
+
+#groups--container {
+  display: flex;
+  gap: 0.75rem;
+  overflow-x: auto;
+  padding-bottom: 0.5rem;
+}
+#groups--container::-webkit-scrollbar {
+  height: 0.25em;
+  background-color: #272231;
+}
+#groups--container::-webkit-scrollbar-thumb {
+  background-color: white;
+}
+
+.group--item {
+  background-color: #1a1622;
+  width: 8em;
+  height: 8em;
+  border-radius: 0.25rem;
+  padding: 0.75em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+}
+.group--item:hover {
+  background-color: #272231;
+}
+.group--item-details {
+  display: flex;
+  flex-direction: column;
+  max-height: 6.125rem;
+  gap: 0.25em;
+  width: 6.5rem;
+}
+.group--item-details_name {
+  font-weight: 600;
+  letter-spacing: 0.075em;
+  font-size: 0.875em;
+  line-height: 1.25rem;
+  height: 3.75rem;
+}
+.group--item-details_date {
+  letter-spacing: 0.1rem;
+  font-size: 0.75em;
+  color: #aaa3a3;
+}
+.group--item-progress {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.group--item-progress label {
+  letter-spacing: 0.1rem;
+  font-size: 0.75em;
+  line-height: 1rem;
+  font-weight: 500;
+}
+
+.section {
+  padding: 0 1em;
+  margin-bottom: 1.5em;
+}
+.section:nth-of-type(3) {
+  margin-bottom: 4em;
+}
+.section--title {
+  font-weight: 700;
+  font-size: 1.2em;
+  display: inline-block;
+  margin-bottom: 1em;
+  letter-spacing: 0.1em;
+}
+.section--box {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
+.section--box-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5em;
+  cursor: pointer;
+  background-color: #1a1622;
+  padding: 0.625em 0.65em;
+  border-radius: 0.125em;
+}
+.section--box-item:hover {
+  background-color: #272231;
+}
+.section--box-item_value {
+  font-size: 1em;
+  font-weight: 600;
+  line-height: 1em;
+  letter-spacing: 0.075em;
+  width: 90%;
+}
+
+.check-icon-box {
+  width: 1em;
+  height: 1em;
+  border: 0.125em solid #3446ee;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.check-icon-box--inner {
+  display: none;
+  width: 0.5em;
+  height: 0.5em;
+  background-color: #3446ee;
+  border-radius: 50%;
+}
+
+.completed > .check-icon-box {
+  border: 0.125em solid #ffffff6e;
+}
+.completed > .check-icon-box > .check-icon-box--inner {
+  display: block;
+  background-color: #ffffff6e;
+}
+.completed > .section--box-item_value {
+  color: #ffffff6e;
+  -webkit-text-decoration: line-through 0.125em;
+          text-decoration: line-through 0.125em;
+}
+
+.bottom-button-el {
+  padding: 1em;
+  z-index: 9;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 1em;
+}
+.bottom-button-el button {
+  box-shadow: 0px 0px 16px 8px #1a1622be;
+}
+
+#add-group-btn {
+  padding: 0.75rem 0;
+}
+
+#main-add-task-btn {
+  padding: 0.75rem 0;
+}
+
+.overlay {
+  z-index: 99;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  display: none;
+  background-color: #1a1622ce;
+  padding: 0 1em;
+}
+.overlay--inputModal {
+  background-color: #13101A;
+  padding: 1em;
+  border-radius: 0.25rem;
+  width: 100%;
+  display: none;
+}
+
+.inputModal--form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  position: relative;
+}
+.inputModal--form-inputArea {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+.inputModal--form-inputArea_field {
+  padding: 0.75rem;
+  font-size: 0.95rem;
+  letter-spacing: 0.1rem;
+  line-height: 1.25rem;
+  background-color: #1a1622;
+  color: white;
+  border: none;
+  border-radius: 0.25rem;
+}
+.inputModal--form-button {
+  padding: 0.75rem 0;
+}
+
+.active {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.grpMod > div:nth-of-type(1) {
+  display: block;
+}
+
+.tskMod > div:nth-of-type(2) {
+  display: block;
+}

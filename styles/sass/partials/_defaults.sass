@@ -1,0 +1,108 @@
+@use './_variables' as *
+
+*, *::after, *::before
+    outline: none
+    padding: 0
+    margin: 0
+    box-sizing: border-box
+    list-style: none
+    font-family: Barlow, sans-serif
+
+body
+    background-color: $secondary
+    color: white
+    // font-family: Barlow, sans-serif
+    font-size: 16px
+    height: 100vh
+    position: relative
+    scroll-behavior: smooth
+
+@media screen and ( min-width: 401px )
+    body
+        display: none
+
+button
+    cursor: pointer
+
+textarea
+    resize: none
+
+    &::-webkit-scrollbar
+        width: 0px
+
+.charCount
+    font-size: .8em
+    letter-spacing: 0.1em
+    // position: absolute
+
+// textarea:is(:focus, :valid)
+//     border-color: $primary
+
+.d-none
+    display: none !important
+
+.btn
+    color: white
+    background-color: $primary
+    border: none
+    border-radius: $bdrR
+    font-size: 1em
+    font-weight: 600
+    line-height: 1.5rem
+    letter-spacing: 0.1em
+    width: 100%
+
+.pBar
+    width: 4.25rem
+    height: 0.25rem
+
+    /* turn off default progress bar styling */
+progress, // All HTML5 progress enabled browsers
+progress[role] // polyfill
+    // Reset the default appearance
+    -webkit-appearance: none
+         -moz-appearance: none
+              appearance: none
+    // Get rid of default border in Firefox.
+    border: none
+
+    // For polyfill
+    background-size: auto
+
+// polyfill
+progress[role]:after 
+    // Removes default background from polyfill
+    background-image: none
+
+// Ensure fallback text doesn't appear in polyfill
+progress[role] strong
+    display: none
+
+    /* progress bar background */
+progress, // Firefox
+progress[role][aria-valuenow] // Polyfill
+    background: white !important
+    border-radius: 0.125rem
+
+// WebKit/Blink (Chrome/Safari/Opera)
+progress[value]::-webkit-progress-bar
+    background-color: white
+    border-radius: 0.125rem
+    box-shadow: 0 0.125rem 0.3125rem rgba(0, 0, 0, 0.25) inset
+
+    /* progress bar value */
+// Chrome
+progress::-webkit-progress-value
+    background-color: $primary
+
+// Firefox
+progress[value]::-moz-progress-bar
+    background-color: $primary
+
+// For IE10
+progress
+    color: $primary
+
+// Polyfill
+progress[aria-valuenow]:before
+    background-color: $primary
