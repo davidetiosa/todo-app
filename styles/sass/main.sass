@@ -113,17 +113,32 @@
     &:nth-of-type(3)
         margin-bottom: 4em
 
-    &--title
-        font-weight: 700
-        font-size: 1.2em
-        display: inline-block
-        margin-bottom: 1em
-        letter-spacing: 0.1em
+    &--head
+        display: flex
+        justify-content: space-between
+        margin-bottom: 0.5em
+
+        &_title
+            font-weight: 700
+            font-size: 1.2em
+            line-height: 1.5em
+            display: inline-block
+            letter-spacing: 0.1em
+
+        &_dropIcon
+            display: flex
+            justify-content: center
+            align-items: center
+            cursor: pointer
+            width: 1.75em
+            height: 1.75em
 
     &--box
         display: flex
         flex-direction: column
         gap: 0.5em
+
+        
 
         &-item
             display: flex
@@ -172,6 +187,7 @@
     & > .section--box-item_value
         color: $greyedout
         text-decoration: line-through 0.125em
+        text-decoration-color: $greyedout
 
 .bottom-button-el
     padding: 1em
@@ -220,7 +236,7 @@
 .inputModal--form
     display: flex
     flex-direction: column
-    gap: 1.5rem
+    gap: 0.5rem
     position: relative
 
     &-inputArea
@@ -257,3 +273,45 @@
     
     & > div:nth-of-type(2)
         display: block
+
+.drop-closed
+    bottom: 100%
+    animation: dropClosed ease-in-out 400ms forwards
+    pointer-events: none
+
+@keyframes dropClosed
+    0%
+        transform: translateY(0%)
+        opacity: 1
+    50%
+        opacity: 0
+    100%
+        transform: translateY(-100%)
+        opacity: 0
+
+.drop-opened
+    animation: dropOpened ease-out 150ms forwards
+
+@keyframes dropOpened
+    0%
+        transform: translateY(-100%)
+        opacity: 0
+    50%
+        opacity: 0
+    100%
+        transform: translateY(0%)
+        opacity: 1
+
+.drop-cardstyle
+    animation: dropCardStyle linear 300ms forwards
+
+@keyframes dropCardStyle
+    0%
+        padding: 0 1em
+        margin-left: 0
+        margin-right: 0
+    100%
+        padding: 0.25em 0.75em
+        margin-left: 1em
+        margin-right: 1em
+        background-color: $tbx

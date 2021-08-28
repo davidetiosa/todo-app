@@ -22,7 +22,7 @@
             </div>
         </div>
     </header>
-    <section class="section" id="groups">
+    <section class="section d-none" id="groups">
         <h2 class="section--title">Groups</h2>
         <div id="groups--container">
             <!-- max 42 characters -->
@@ -88,38 +88,23 @@
             </div>
         </div>
     </section>
-    <section class="section" id="uncompleted-tasks">
-        <h2 class="section--title">Tasks</h2>
-        <ul class="section--box" id="uncompleted-tasks--box">
-            <li class="section--box-item">
-                <div class="check-icon-box">
-                    <div class="check-icon-box--inner"></div>
-                </div>
-                <p class="section--box-item_value">Lorem ipsum, dolor sit amet eveniet. Lorem ipsum, dolor sit amet eveniet.</p>
-            </li>
-            <li class="section--box-item">
-                <div class="check-icon-box">
-                    <div class="check-icon-box--inner"></div>
-                </div>
-                <p class="section--box-item_value">Lorem ipsum, dolor sit amet.</p>
-            </li>
-            <li class="section--box-item">
-                <div class="check-icon-box">
-                    <div class="check-icon-box--inner"></div>
-                </div>
-                <p class="section--box-item_value">Lorem ipsum, dolor sit amet.</p>
-            </li>
-            <li class="section--box-item">
-                <div class="check-icon-box">
-                    <div class="check-icon-box--inner"></div>
-                </div>
-                <p class="section--box-item_value">Lorem ipsum, dolor sit amet eveniet.</p>
-            </li>
-        </ul>
+    <section class="section" id="default-uncompleted-tasks">
+        <div class="section--head">
+            <h2 class="section--head_title">Tasks</h2>
+            <!-- <div class="section--head_dropIcon">
+                <i data-eva="chevron-up" data-eva-fill="#3446ee" data-eva-height="24" data-eva-width="24"></i>
+            </div> -->
+        </div>
+        <ul class="section--box" id="default-uncompleted-tasks--box"></ul>
     </section>
     <section class="section" id="completed-tasks">
-        <h2 class="section--title">Completed</h2>
-        <ul class="section--box" id="completed-tasks--box">
+        <div class="section--head">
+            <h2 class="section--head_title">Completed</h2>
+            <div class="section--head_dropIcon">
+                <i data-eva="chevron-down" data-eva-fill="#3446ee" data-eva-height="24" data-eva-width="24"></i>
+            </div>
+        </div>
+        <ul class="section--box drop-closed d-none" id="completed-tasks--box">
             <li class="section--box-item completed">
                 <div class="check-icon-box">
                     <div class="check-icon-box--inner"></div>
@@ -167,7 +152,7 @@
         <div class="overlay--inputModal" id="main-overlay--addGroupModal">
             <div class="inputModal--form">
                 <div class="inputModal--form-inputArea">
-                    <textarea onkeyup="gccUpdate(this.value)" required rows="1" maxlength="42" class="inputModal--form-inputArea_field" name="" id="addGroupModal--field" placeholder="Enter group name..." autocomplete="off"></textarea>
+                    <textarea onkeyup="gccUpdate(this.value)" required rows="1" maxlength="60" class="inputModal--form-inputArea_field" name="" id="addGroupModal--field" placeholder="Enter group name..." autocomplete="off"></textarea>
                     <span class=charCount></span>
                 </div>
                 <button class="inputModal--form-button btn" id="addGroupModal--button">Add group</button>
